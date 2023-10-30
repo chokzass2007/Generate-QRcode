@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QR Code Styling</title>
+</head>
+<body>
+
+<div id="canvas"></div>
+<script src="./qr-code-style.js"></script>
+<script type="text/javascript">
+
+    const qrCode = new QRCodeStyling({
+        width: 1000,
+        height: 1000,
+        type: "svg",
+        data: "https://www.universalrice.com/",
+        image: "./img/logo_header.png",
+        dotsOptions: {
+            color: "#000",
+            type: "rounded"
+        },
+        backgroundOptions: {
+            color: "#e9ebee",
+        },
+        imageOptions: {
+            crossOrigin: "anonymous",
+            margin: 20
+        }
+    });
+
+    qrCode.append(document.getElementById("canvas"));
+    qrCode.download({ name: "qr", extension: "jpg" });
+</script>
+</body>
+</html>
